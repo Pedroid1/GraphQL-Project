@@ -42,3 +42,7 @@ O aplicativo exibe uma lista de países e é possível clicar sobre para obter i
 ## Arquitetura
 **GraphQL Project** utiliza a arquitetura MVVM com Clean Architecture, que segue as [recomendações oficiais do Google](https://developer.android.com/topic/architecture).
 </br></br>
+
+## Créditos pelo conteúdo
+- [Philipp Lackner](https://www.youtube.com/watch?v=ME3LH2bib3g)
+
