@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="com.pedroid1.graphqlproject.domain.model.SimpleCountry" />
+
+        <variable
+            name="onClick"
+            type="com.pedroid1.graphqlproject.ui.CountriesAdapter.OnSelectCountry" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> onClick.onSelected(country.code)}"
+        android:paddingHorizontal="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
+
+        <TextView
+            android:id="@+id/txt_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:text="@{country.emoji}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_country_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{country.name}"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toTopOf="@id/txt_capital"
+            app:layout_constraintStart_toEndOf="@id/txt_emoji"
+            app:layout_constraintTop_toTopOf="@id/txt_emoji"
+            tools:text="Brasil" />
+
+        <TextView
+            android:id="@+id/txt_capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{country.capital}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_emoji"
+            app:layout_constraintStart_toStartOf="@id/txt_country_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_country_name"
+            tools:text="Brasília" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
